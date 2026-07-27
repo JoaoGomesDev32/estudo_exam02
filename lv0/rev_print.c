@@ -11,10 +11,11 @@ int	main(int argc, char **argv)
 	{
 		while (argv[1][i])
 			i++;
-		while (i)
+		i--;
+		while (i >= 0)
 		{
-			--i;
 			write(1, &argv[1][i], 1);
+			i--;
 		}
 		write(1, "\n", 1);
 	}
