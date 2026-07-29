@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 		i = 0;
 		while (av[1][i])
 			i++;
-		while (i >= 0)
+		while (i > 0)
 		{
 			end = i;
 			while (i > 0 && av[1][i - 1] != ' ')
