@@ -8,7 +8,7 @@ int	main(int ac, char **av)
 	int	in_word;
 	int	first_word;
 
-	if (ac != 2)
+	if (ac < 2)
 	{
 		write(1, "\n", 1);
 		return (0);
