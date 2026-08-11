@@ -2,54 +2,36 @@
 
 void	str_capitalizer(char *str)
 {
-	int	i;
-	int	start;
+	int	i = 0;
+	int	start = 1;
 
-	i = 0;
-	start = 1;
 	while (str[i])
 	{
 		if (str[i] == ' ' || str[i] == '\t')
-		{
-			write(1, &str[i], 1);
 			start = 1;
-		}
-		else if (start == 1 && str[i] >= 'a' && str[i] <= 'z')
+		else if (start && str[i] >= 'a' && str[i] <= 'z')
 		{
 			str[i] -= 32;
-			write(1, &str[i], 1);
 			start = 0;
 		}
-		else if (str[i] >= 'A' && str[i] <= 'Z' && start ==0)
-		{
+		else if (!start && str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;
-			write(1, &str[i], 1);
-			start = 0;
-		}
 		else
-		{
-			write(1, &str[i], 1);
 			start = 0;
-		}
+		write(1, &str[i], 1);
 		i++;
 	}
 	write(1, "\n", 1);
 }
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
-	int	i;
+	int	i = 1;
 
-	if (argc == 1)
+	if (ac == 1)
 		write(1, "\n", 1);
 	else
-	{
-		i = 1;
-		while (i < argc)
-		{
-			str_capitalizer(argv[i]);
-			i++;
-		}
-	}
+		while (i < ac)
+			str_capitalizer(av[i++]);
 	return (0);
 }
