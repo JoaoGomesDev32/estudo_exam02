@@ -28,9 +28,8 @@ int	main(int ac, char **av)
 	{
 		while (i < ac)
 		{
-			rstr_capitalizer(ac - 1);
+			rstr_capitalizer(av[i]);
 			i++;
 		}
-		write(1, "\n", 1);
 	}
 }
