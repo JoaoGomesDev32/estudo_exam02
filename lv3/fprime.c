@@ -1,15 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	int div = 2;
+	int	div = 2;
+	int	n;
 
 	if (ac != 2)
 		printf("\n");
 	else
 	{
-		int n = atoi(av[1]);
+		n = atoi(av[1]);
+		if (n == 1)
+			printf("1\n");
 		while (n > 1)
 		{
 			if (n % div == 0)
@@ -24,5 +27,4 @@ int main(int ac, char **av)
 		}
 		printf("\n");
 	}
-	return (0);
 }
